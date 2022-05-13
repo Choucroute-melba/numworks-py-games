@@ -19,7 +19,10 @@ class grid:
     s.x=x
     s.y=y
     s.cw=s.gw/x-1
-    s.ch=s.gh/y-1  
+    s.ch=s.gh/y-1
+    s.gox = s.sw-s.gw
+    s.goy = s.sh-s.gh
+
     for i in range(y):
       for j in range(x):
         s.g[i].append(0)
@@ -28,8 +31,13 @@ class grid:
     print(x," ",y," ",s.cw," ",s.ch)
     
   def dg(s):
-    draw_line(s.sw-s.gw, s.sh-s.gh, s.sw, s.sh-s.gh, s.c)
-    draw_line(s.sw-s.gw, s.sh-s.gh, s.sw-s.gw, s.sh, s.c)
+    draw_line(s.gox, s.goy, s.sw, s.goy, s.c) # horizontal
+    draw_line(s.gox, s.goy, s.gox, s.sh, s.c) # vertical
+    for i in range(y):
+        draw_line(s.gox, s.goy + i * s.ch, s.sw, s.goy + i * s.ch, s.c)
+    for i in range(x):
+        draw_line(s.gox + i * s.cw, s.goy, s.gox + i * s.cw, s.goy, s.c)
+
     return
     
 g=grid(10,8)
