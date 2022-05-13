@@ -29,7 +29,7 @@ class grid:
       s.g.append([])
       #print(str(s.g))
     print(x," ",y," ",s.cw," ",s.ch)
-    draw_string("x " + str(x) + "  y " + str(y) + "  cw " + str(s.cw) + "  ch " + str(s.ch), 0, 0)
+    draw_string("x " + str(x) + " : y " + str(y) + " : cw " + str(s.cw) + " : ch " + str(s.ch), 0, 0)
     
   def dg(s):
     draw_line(s.gox, s.goy, s.sw, s.goy, s.c) # horizontal
