@@ -33,9 +33,9 @@ class grid:
   def dg(s):
     draw_line(s.gox, s.goy, s.sw, s.goy, s.c) # horizontal
     draw_line(s.gox, s.goy, s.gox, s.sh, s.c) # vertical
-    for i in range(y):
+    for i in range(s.y):
         draw_line(s.gox, s.goy + i * s.ch, s.sw, s.goy + i * s.ch, s.c)
-    for i in range(x):
+    for i in range(s.x):
         draw_line(s.gox + i * s.cw, s.goy, s.gox + i * s.cw, s.goy, s.c)
 
     return
