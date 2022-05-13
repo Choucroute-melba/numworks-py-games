@@ -54,7 +54,6 @@ class grid:
       y = 0
       for i in s.g:
           for j in i:
-            if(j == 1):
             x = x + 1
         y = y + 1
 
