@@ -9,7 +9,7 @@ class grid:
   y=0
   sw=330
   sh=230
-  gw=320
+  gw=330
   gh=170
   cw=0
   ch=0
