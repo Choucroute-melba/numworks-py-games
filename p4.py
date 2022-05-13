@@ -32,8 +32,8 @@ class grid:
     draw_string("x " + str(s.x) + " | y " + str(s.y) + " | cw " + str(s.cw) + " | ch " + str(s.ch), 0, 0)
     
   def dg(s):
-    draw_line(s.gox, s.goy, s.sw, s.goy, s.c) # horizontal
-    draw_line(s.gox, s.goy, s.gox, s.sh, s.c) # vertical
+    #draw_line(s.gox, s.goy, s.sw, s.goy, s.c) # horizontal
+    #draw_line(s.gox, s.goy, s.gox, s.sh, s.c) # vertical
 
     # draw lines
     for i in range(s.y):
