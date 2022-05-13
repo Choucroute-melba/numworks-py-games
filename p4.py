@@ -18,8 +18,8 @@ class grid:
   def __init__(s,x,y):
     s.x=x
     s.y=y
-    s.cw=s.gw/x-1
-    s.ch=s.gh/y-1
+    s.cw=int(s.gw/x-1)
+    s.ch=int(s.gh/y-1)
     s.gox = s.sw-s.gw
     s.goy = s.sh-s.gh
 
