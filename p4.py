@@ -8,7 +8,7 @@ class grid:
   x=0
   y=0
   sw=320
-  sh=220
+  sh=230
   gw=320
   gh=170
   cw=0
