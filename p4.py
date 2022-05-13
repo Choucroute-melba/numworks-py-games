@@ -43,8 +43,8 @@ class grid:
     # draw columns
     for i in range(s.x):
         print(str(i))
-        draw_line(s.gox + i * s.cw, s.goy, s.gox + i * s.cw, s.goy, s.c)
-    draw_line(s.gox + s.x * s.cw, s.goy, s.gox + s.x * s.cw, s.goy, s.c)
+        draw_line(s.gox + i * s.cw, s.goy, s.gox + i * s.cw, s.sh, s.c)
+    draw_line(s.gox + s.x * s.cw, s.goy, s.gox + s.x * s.cw, s.sh, s.c)
 
     return
     
