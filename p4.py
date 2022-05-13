@@ -34,10 +34,16 @@ class grid:
   def dg(s):
     draw_line(s.gox, s.goy, s.sw, s.goy, s.c) # horizontal
     draw_line(s.gox, s.goy, s.gox, s.sh, s.c) # vertical
+
+    # draw lines
     for i in range(s.y):
         draw_line(s.gox, s.goy + i * s.ch, s.sw, s.goy + i * s.ch, s.c)
+    draw_line(s.gox, s.goy + s.y * s.ch, s.sw, s.goy + s.y * s.ch, s.c)
+
+    # draw columns
     for i in range(s.x):
         draw_line(s.gox + i * s.cw, s.goy, s.gox + i * s.cw, s.goy, s.c)
+    draw_line(s.gox + s.x * s.cw, s.goy, s.gox + s.x * s.cw, s.goy, s.c)
 
     return
     
