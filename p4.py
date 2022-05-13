@@ -4,6 +4,8 @@ from kandinsky import *
 
 class grid:
   c=[0,0,0]
+  cp1=[255,0,0]
+  cp2=[0,0,255]
 
   x=0
   y=0
@@ -31,7 +33,7 @@ class grid:
     print(x," ",y," ",s.cw," ",s.ch)
     #draw_string("x " + str(s.x) + " | y " + str(s.y) + " | cw " + str(s.cw) + " | ch " + str(s.ch), 0, 0)
     
-  def dg(s):
+  def dgd(s):
     #draw_line(s.gox, s.goy, s.sw, s.goy, s.c) # horizontal
     #draw_line(s.gox, s.goy, s.gox, s.sh, s.c) # vertical
 
@@ -46,6 +48,16 @@ class grid:
     draw_line(s.gox + s.x * s.cw, s.goy, s.gox + s.x * s.cw, s.sh, s.c)
 
     return
+
+  def dgm(s):
+      x = 0
+      y = 0
+      for i in s.g:
+          for j in i:
+            if(j == 1):
+            x = x + 1
+        y = y + 1
+
     
 g=grid(7,6)
-g.dg()
+g.dgd()
