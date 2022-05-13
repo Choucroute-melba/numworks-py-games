@@ -47,5 +47,5 @@ class grid:
 
     return
     
-g=grid(10,8)
+g=grid(7,6)
 g.dg()
