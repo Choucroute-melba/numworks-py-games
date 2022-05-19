@@ -147,7 +147,7 @@ class game:
         elif(se == false):
           s.g.g[i][s.sc] = s.p + 2
           s.lastc = [i-1, s.sc]
-    print("s.lastc = [", s.lastc[0], ", ", s.lastc[1]"]")
+    print("s.lastc = [", s.lastc[0], ", ", s.lastc[1], "]")
     if(s.lastc[0] != -1):
       s.g.g[s.lastc[0]][s.lastc[1]] = 0
     return
