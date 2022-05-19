@@ -1,6 +1,7 @@
 from math import *
 from kandinsky import *
 from ion import *
+from time import *
 
 
 class grid:
@@ -132,12 +133,13 @@ g=game(grid(7,6))
 g.g.dgd()
 g.dgm()
 
-lpk = 0
+t = monotonic()
 
 while(g.w == 0):
-  if(keydown(KEY_RIGHT) and lpk != KEY_RIGHT):
-    lpk = KEY_RIGHT
-    g.onr()
-  if(keydown(KEY_LEFT) and lpk != KEY_LEFT):
-    lpk = KEY_LEFT
-    g.onl()
+  if((t + 500) < monotonic):
+    if(keydown(KEY_RIGHT) and lpk != KEY_RIGHT):
+      t = monotonic()
+      g.onr()
+    if(keydown(KEY_LEFT) and lpk != KEY_LEFT):
+      t = monotonic()
+      g.onl()
