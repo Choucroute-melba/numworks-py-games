@@ -29,7 +29,7 @@ class grid:
 
     for i in range(y):
       for j in range(x):
-        s.g[i].append(3)
+        s.g[i].append(0)
       s.g.append([])
       #print(str(s.g))
     print(x," ",y," ",s.cw," ",s.ch)
@@ -63,6 +63,7 @@ class game:
   p = 2
   sc = 3
   w = 0
+  lastc = null
   def __init__(s, g):
     s.g = g
     return
@@ -87,6 +88,9 @@ class game:
             #draw_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
             fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c2)
             fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
+          elif(j == 0):
+            fill_rect(x+1, y+1, s.g.cw-1, s.g.ch-1, (255,255,255))
+            
           x = x + s.g.cw
         x=s.g.gox
         y = y + s.g.ch
@@ -126,6 +130,19 @@ class game:
     if(s.sc < 0):
       s.sc = s.g.x
     s.dgm()
+    return
+
+  def onSelect(s, se):
+    for i in range(s.g.y):
+      if(s.g.g[s.sc][i] != 0):
+        if(se == true):
+          s.g.g[s.sc][i-1] = p
+          lastc = [s.sc, i-1]
+        elif(se == false):
+          s.g.g[s.sc][i-1] = p + 2
+          lastc = null
+    if(lastc != null):
+      s.g.g[lastc[0]][lastc[1]] = 0
     return
 
 
