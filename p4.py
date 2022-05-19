@@ -93,7 +93,7 @@ class game:
   def dgmi(s):
     x = 0
     y = 0
-    if(s.p == 1): 
+    if(s.p == 1):
       c = s.g.c1
     elif(s.p == 2):
       c = s.g.c2
