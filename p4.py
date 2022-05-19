@@ -119,18 +119,9 @@ class game:
         fill_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
         #fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
       else:
-<<<<<<< HEAD
         draw_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
         #fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
         #fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
-=======
-        #draw_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
-        fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
-        fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
-
-    
-    #draw_string(str(s.cr), 0, s.g.ch)
->>>>>>> master
     return
 
   def onr(s):
@@ -239,5 +230,5 @@ while(g.w == 0):
   if((gt + 0.1) < monotonic()):
     g.tick()
     gt = monotonic()
-    
+
     #print(g.sc)
