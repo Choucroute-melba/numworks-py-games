@@ -134,3 +134,6 @@ g.dgm()
 
 while(g.w == 0):
   if(keydown(KEY_RIGHT)):
+    g.onr()
+  if(keydown(KEY_LEFT)):
+    g.onl()
