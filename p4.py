@@ -64,6 +64,7 @@ class grid:
 class game:
   p = 2
   sco = 0
+  lsco = 0
   sca = 0
   w = 0
   lastc = [-1, -1]
@@ -122,6 +123,7 @@ class game:
     return
 
   def onr(s):
+    s.lsco = s.sco
     s.sco = s.sco + 1
     if(s.sco >= s.g.x):
       s.sco = 0
@@ -130,6 +132,7 @@ class game:
     return
 
   def onl(s):
+    s.lsco = s.sco
     s.sco = s.sco - 1
     if(s.sco < 0):
       s.sco = s.g.x - 1
@@ -139,7 +142,6 @@ class game:
 
   def ons(s, se):
     s.g.g[s.sca][s.sco] = 0
-    s.dgm()
     for i in range(s.g.y):
       if(s.g.g[i][s.sco] == 1 or s.g.g[i][s.sco] == 2):
         s.sca = i-1
@@ -149,7 +151,7 @@ class game:
         break
 
     if(se == false):
-      s.g.g[s.sca][s.sco] = s.p + 2
+      s.g.g[s.sca][s.lsco] = s.p + 2
     if(se == true):
       s.g.g[s.sca][s.sco] = s.p
       if(s.sca != 0):
