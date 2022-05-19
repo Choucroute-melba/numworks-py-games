@@ -63,7 +63,8 @@ class grid:
 
 class game:
   p = 2
-  sc = 0
+  sco = 0
+  sca = 0
   w = 0
   lastc = [-1, -1]
   def __init__(s, g):
@@ -111,7 +112,7 @@ class game:
 
     for i in range(s.g.x):
       x = i * s.g.cw
-      if(i == s.sc):
+      if(i == s.sco):
         #fill_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
         fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
       else:
@@ -121,47 +122,37 @@ class game:
     return
 
   def onr(s):
-    s.sc = s.sc + 1
-    if(s.sc >= s.g.x):
-      s.sc = 0
+    s.sco = s.sco + 1
+    if(s.sco >= s.g.x):
+      s.sco = 0
     s.ons(false)
     s.dgm()
     return
 
   def onl(s):
-    s.sc = s.sc - 1
-    if(s.sc < 0):
-      s.sc = s.g.x - 1
+    s.sco = s.sco - 1
+    if(s.sco < 0):
+      s.sco = s.g.x - 1
     s.ons(false)
     s.dgm()
     return
 
   def ons(s, se):
-    #print("-------------------\n\n")
-    #print("s.lastc = [", s.lastc[0], ", ", s.lastc[1], "]")
-    if(s.lastc[0] != -1):
-      s.g.g[s.lastc[0]][s.lastc[1]] = 0
-
-    ctm = [-1, -1]
-
+    s.g.g[s.sca][s.sco] = 0
     for i in range(s.g.y):
-      print(str(s.g.g[i]))
-      if(s.g.g[i][s.sc] == 1 or s.g.g[i][s.sc] == 2):
-        print(s.g.g[i][s.sc], " == 1 or ", s.g.g[i][s.sc], " == 2")
-        ctm = [i-1, s.sc]
-      elif(i == s.g.y - 1):
-        print(i, " == ", s.g.y - 1)
-        ctm = [i, s.sc]
+      if(s.g.g[i][s.sco] == 1 or s.g.g[i][s.sco] == 2):
+        s.sca = i-1
+        break
+      if(i == s.g.y -1):
+        s.sca = i
+        break
 
-      if(ctm[0] != -1):
-        #print("s.g.g[", ctm[0], "][", ctm[1], "]; s.g.y = ", s.g.y)
-        if(se == true):
-          s.g.g[ctm[0]][ctm[1]] = s.p
-          print("selection : s.g.g[", ctm[0], "] = ", s.g.g[ctm[0]])
-          s.lastc = [-1, -1]
-        elif(se == false):
-          s.g.g[ctm[0]][ctm[1]] = s.p + 2
-          s.lastc = ctm
+    if(se == false):
+      s.g.g[s.sca][s.sco] = p + 2
+    if(se == true):
+      s.g.g[s.sca][s.sco] = p
+      if(s.sca != 0):
+        s.sca = s.sca -1
     return
 
   def onp(s):
