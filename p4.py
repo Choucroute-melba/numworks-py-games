@@ -116,7 +116,7 @@ class game:
 
   def onr(s):
     s.sc = s.sc + 1
-    if(s.sc > s.g.x):
+    if(s.sc >= s.g.x):
       s.sc = 0
     s.dgm()
     return
@@ -136,7 +136,7 @@ g.dgm()
 t = monotonic()
 
 while(g.w == 0):
-  if((t + 0.4) < monotonic()):
+  if((t + 0.25) < monotonic()):
     if(keydown(KEY_RIGHT)):
       t = monotonic()
       g.onr()
