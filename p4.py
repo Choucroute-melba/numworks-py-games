@@ -63,7 +63,7 @@ class grid:
 
 class game:
   p = 2
-  sc = 3
+  sc = 0
   w = 0
   lastc = [-1, -1]
   def __init__(s, g):
@@ -137,9 +137,11 @@ class game:
     return
 
   def ons(s, se):
+    print("-------------------\n\n")
     for i in range(s.g.y):
+      print("s.g.g[", i, "][", s.sc, "]; s.g.y = ", s.g.y)
       if(s.g.g[i][s.sc] != 0 or i == s.g.y - 1):
-        print("s.g.g[", i, "][", s.sc, "]; s.g.y = ", s.g.y)
+        
         if(se == true):
           s.g.g[i-1][s.sc] = s.p
           s.lastc = [i-1, s.sc]
