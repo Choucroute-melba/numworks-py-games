@@ -115,14 +115,14 @@ class game:
 
   def onr(s):
     s.sc = s.sc + 1
-    if(sc > s.g.x):
+    if(s.sc > s.g.x):
       s.sc = 0
     s.dgm()
     return
 
   def onl(s):
     s.sc = s.sc - 1
-    if(sc < 0):
+    if(s.sc < 0):
       s.sc = s.g.x
     s.dgm()
     return
