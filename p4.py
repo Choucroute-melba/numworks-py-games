@@ -58,8 +58,8 @@ class grid:
 
 
 class game:
-  p = 1
-  sc = 0
+  p = 2
+  sc = 3
   def __init__(s, g):
     s.g = g
     return
