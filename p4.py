@@ -150,7 +150,7 @@ class game:
     return
 
   def ons(s, se):
-    if(s.g.g[s.sca][s.lsco] == 3 or s.g.g[s.sca][s.lsco] == 4):
+    if(s.g.g[s.sca][s.lsco] != 1 and s.g.g[s.sca][s.lsco] != 2):
       s.g.g[s.sca][s.lsco] = 0
 
     for i in range(s.g.y):
