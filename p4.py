@@ -148,7 +148,7 @@ class game:
       print(str(s.g.g[i]))
       if(s.g.g[i][s.sc] == 1 or s.g.g[i][s.sc] == 2):
         print(s.g.g[i][s.sc], " == 1 or ", s.g.g[i][s.sc], " == 2")
-        ctm = [i, s.sc]
+        ctm = [i-1, s.sc]
       elif(i == s.g.y - 1):
         print(i, " == ", s.g.y - 1)
         ctm = [i, s.sc]
