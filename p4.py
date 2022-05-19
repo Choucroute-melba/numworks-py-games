@@ -125,29 +125,35 @@ class game:
 
   def onr(s):
     s.lsco = s.sco
-    s.sco = s.sco + 1
-    if(s.sco >= s.g.x):
-      s.sco = 0
-    while(s.g.g[0][s.sco] == 2 or s.g.g[0][s.sco] == 3):
-      s.sco = s.sco + 1
-      if(s.sco >= s.g.x):
-        s.sco = 0
+    s.mv("right")
     s.ons(false)
     s.dgm()
     return
 
   def onl(s):
     s.lsco = s.sco
-    s.sco = s.sco - 1
-    if(s.sco < 0):
-      s.sco = s.g.x - 1
-    while(s.g.g[0][s.sco] == 2 or s.g.g[0][s.sco] == 3):
-      s.sco = s.sco - 1
-      if(s.sco < 0):
-        s.sco = s.g.x - 1
+    s.mv("left")
     s.ons(false)
     s.dgm()
     return
+
+  def mv(s, d):
+    if(d == "right"):
+      for i in range(s.g.x):
+        s.sco = s.sco + 1
+        if(s.sco >= s.g.x):
+          s.sco = 0
+        if(s.g.g[0][s.sco] != 1 and s.g.g[0][s.sco] != 2):
+          return
+    elif(d == "left"):
+      for i in range(s.g.x):
+        s.sco = s.sco - 1
+        if(s.sco < 0):
+          s.sco = s.g.x -1
+        if(s.g.g[0][s.sco] != 1 and s.g.g[0][s.sco] != 2):
+          return
+
+
 
   def ons(s, se):
     if(s.g.g[s.sca][s.lsco] != 1 and s.g.g[s.sca][s.lsco] != 2):
