@@ -179,7 +179,7 @@ class game:
     if(se == true):
       s.g.g[s.sca][s.sco] = s.p
       s.cr = s.cr - 1
-      if(s.cr == 0):
+      if(s.cr <= 0):
         return
       if(s.sca != 0):
         s.sca = s.sca -1
@@ -204,7 +204,7 @@ class game:
     return
 
   def tick(s):
-    if(g.p == 0):
+    if(g.p <= 0):
       fill_rect(0, 0, s.gox, 330, (255,255,255))
       draw_string(0, 0, "partie terminée.")
       g.w = 1
@@ -230,7 +230,7 @@ while(g.w == 0):
       t = monotonic()
       g.onp()
   if((gt + 0.1) < monotonic()):
-
+    g.tick()
     gt = monotonic()
     
     #print(g.sc)
