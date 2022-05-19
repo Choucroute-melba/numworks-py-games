@@ -137,9 +137,9 @@ t = monotonic()
 
 while(g.w == 0):
   if((t + 1) < monotonic()):
-    if(keydown(KEY_RIGHT) and lpk != KEY_RIGHT):
+    if(keydown(KEY_RIGHT)):
       t = monotonic()
       g.onr()
-    if(keydown(KEY_LEFT) and lpk != KEY_LEFT):
+    if(keydown(KEY_LEFT)):
       t = monotonic()
       g.onl()
