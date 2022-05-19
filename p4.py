@@ -141,7 +141,7 @@ class game:
     return
 
   def ons(s, se):
-    s.g.g[s.sca][s.sco] = 0
+    s.g.g[s.sca][s.lsco] = 0
     for i in range(s.g.y):
       if(s.g.g[i][s.sco] == 1 or s.g.g[i][s.sco] == 2):
         s.sca = i-1
@@ -151,7 +151,7 @@ class game:
         break
 
     if(se == false):
-      s.g.g[s.sca][s.lsco] = s.p + 2
+      s.g.g[s.sca][s.sco] = s.p + 2
     if(se == true):
       s.g.g[s.sca][s.sco] = s.p
       if(s.sca != 0):
