@@ -113,6 +113,7 @@ class game:
 
     for i in range(s.g.x):
       x = i * s.g.cw
+      fill_rect(x, y, s.g.cw, s.g.ch, (255,255,255))
       if(i == s.sco):
         #fill_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
         fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
