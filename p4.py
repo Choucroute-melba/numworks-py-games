@@ -64,6 +64,7 @@ class game:
 
   def dgm(s):
 <<<<<<< HEAD
+<<<<<<< HEAD
     x = s.g.gox
     y = s.g.goy
     for i in s.g.g:
@@ -85,22 +86,24 @@ g.g.dgd()
       x = s.gox
       y = s.goy
       for i in s.g:
+=======
+    x = s.g.gox
+    y = s.g.goy
+    for i in s.g.g:
+>>>>>>> 930a4e0 (create game class)
         for j in i:
           #print(x," ",y)
           if(j==1):
-            fill_circle(s.jx(x),s.jy(y),int(s.ch/2),s.c1)
+            fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c1)
           elif(j==2):
-            fill_circle(s.jx(x),s.jy(y),int(s.ch/2),s.c2)
-          x = x + s.cw
-        x=s.gox
-        y = y + s.ch
+            fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
+          x = x + s.g.cw
+        x=s.g.gox
+        y = y + s.g.ch
+    return
 
-  def jx(s,x):
-    return int(x+(s.cw/2))
-    
-  def jy(s, y):
-    return int(y+(s.ch/2))
 
+<<<<<<< HEAD
 class game:
   def __init__(s, goy):
     return    
@@ -108,4 +111,8 @@ class game:
 g=grid(7,6)
 g.dgd()
 >>>>>>> 2d53fce (next)
+=======
+g=game(grid(7,6))
+g.g.dgd()
+>>>>>>> 930a4e0 (create game class)
 g.dgm()
