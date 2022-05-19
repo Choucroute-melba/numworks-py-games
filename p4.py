@@ -1,4 +1,4 @@
-﻿from math import *
+from math import *
 from kandinsky import *
 
 
