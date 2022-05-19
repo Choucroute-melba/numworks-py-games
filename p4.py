@@ -140,10 +140,10 @@ class game:
     for i in range(s.g.y):
       if(s.g.g[s.sc][i] != 0 or i == s.g.y - 1):
         if(se == true):
-          s.g.g[s.sc][i-1] = p
+          s.g.g[s.sc][i-1] = s.p
           s.lastc = [s.sc, i-1]
         elif(se == false):
-          s.g.g[s.sc][i-1] = p + 2
+          s.g.g[s.sc][i-1] = s.p + 2
           s.lastc = [-1, -1]
     if(s.lastc[0] != -1):
       s.g.g[s.lastc[0]][s.lastc[1]] = 0
