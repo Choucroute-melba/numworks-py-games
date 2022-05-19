@@ -104,8 +104,10 @@ class game:
       x = i * s.g.cw
       if(i == s.sc):
         fill_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
+        fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
       else:
         draw_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
+        fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
     return
 
 
