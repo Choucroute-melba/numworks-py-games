@@ -153,6 +153,14 @@ class game:
           s.lastc = [i, s.sc]
     return
 
+  def(onp):
+    s.ons(true)
+    if(s.p == 2):
+      s.p = 1
+    else:
+      s.p = 2
+    return
+
 
 g=game(grid(7,6))
 g.g.dgd()
@@ -168,4 +176,6 @@ while(g.w == 0):
     if(keydown(KEY_LEFT)):
       t = monotonic()
       g.onl()
+    if(keydown(KEY_DOWN) or keydown(KEY_OK) or keydown(KEY_EXE))
+
     #print(g.sc)
