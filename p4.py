@@ -138,7 +138,7 @@ class game:
 
   def ons(s, se):
     for i in range(s.g.y):
-      if(s.g.g[s.sc][i] != 0 or i == s.g.y):
+      if(s.g.g[s.sc][i] != 0 or i == s.g.y - 1):
         if(se == true):
           s.g.g[s.sc][i-1] = p
           s.lastc = [s.sc, i-1]
