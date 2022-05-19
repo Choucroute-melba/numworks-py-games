@@ -67,10 +67,10 @@ class game:
   lsco = 0
   sca = 0
   w = 0
-  cr = s.g.x * s.g.y
 
   def __init__(s, g):
     s.g = g
+    s.cr = s.g.x * s.g.y
     return
 
   def dgm(s):
