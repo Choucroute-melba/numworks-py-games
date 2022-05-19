@@ -142,11 +142,11 @@ class game:
       if(s.g.g[i][s.sc] != 0 or i == s.g.y - 1):
         print("s.g.g[", i, "][", s.sc, "]; s.g.y = ", s.g.y)
         if(se == true):
-          s.g.g[i-1][s.sc] = s.p
+          s.g.g[i][s.sc] = s.p
           s.lastc = [-1, -1]
         elif(se == false):
           s.g.g[i][s.sc] = s.p + 2
-          s.lastc = [i-1, s.sc]
+          s.lastc = [i, s.sc]
     print("s.lastc = [", s.lastc[0], ", ", s.lastc[1], "]")
     if(s.lastc[0] != -1):
       s.g.g[s.lastc[0]][s.lastc[1]] = 0
