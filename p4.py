@@ -128,6 +128,10 @@ class game:
     s.sco = s.sco + 1
     if(s.sco >= s.g.x):
       s.sco = 0
+    while(s.g.g[0][s.sco] == 2 || s.g.g[0][s.sco] == 3)
+      s.sco = s.sco + 1
+      if(s.sco >= s.g.x):
+        s.sco = 0
     s.ons(false)
     s.dgm()
     return
@@ -137,6 +141,10 @@ class game:
     s.sco = s.sco - 1
     if(s.sco < 0):
       s.sco = s.g.x - 1
+    while(s.g.g[0][s.sco] == 2 || s.g.g[0][s.sco] == 3)
+      s.sco = s.sco - 1
+      if(s.sco < 0):
+        s.sco = s.g.x - 1
     s.ons(false)
     s.dgm()
     return
@@ -147,12 +155,6 @@ class game:
 
     for i in range(s.g.y):
       if(s.g.g[i][s.sco] == 1 or s.g.g[i][s.sco] == 2):
-        if(i == 0):
-          if(s.lsco - s.sco < 0):
-            s.onr()
-          else:
-            s.onl()
-          return
         else:
           s.sca = i-1
         break
