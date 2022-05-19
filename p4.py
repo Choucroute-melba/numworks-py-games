@@ -123,8 +123,8 @@ class game:
         fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
         fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
 
-    cr = int(s.cr)
-    draw_string(0, s.g.ch, "cr : " + str(cr))
+    
+    print(s.cr)
     return
 
   def onr(s):
