@@ -132,8 +132,12 @@ g=game(grid(7,6))
 g.g.dgd()
 g.dgm()
 
+lpk
+
 while(g.w == 0):
-  if(keydown(KEY_RIGHT)):
+  if(keydown(KEY_RIGHT) and lpk != KEY_RIGHT):
+    lpk = KEY_RIGHT
     g.onr()
-  if(keydown(KEY_LEFT)):
+  if(keydown(KEY_LEFT) and lpk != KEY_LEFT):
+    lpk = KEY_LEFT
     g.onl()
