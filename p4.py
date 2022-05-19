@@ -185,6 +185,7 @@ while(g.w == 0):
       t = monotonic()
       g.onl()
     if(keydown(KEY_DOWN) or keydown(KEY_OK) or keydown(KEY_EXE)):
+      t = monotonic()
       g.onp()
 
     #print(g.sc)
