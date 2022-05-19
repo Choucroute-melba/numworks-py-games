@@ -138,6 +138,10 @@ class game:
 
   def ons(s, se):
     #print("-------------------\n\n")
+    print("s.lastc = [", s.lastc[0], ", ", s.lastc[1], "]")
+    if(s.lastc[0] != -1):
+      s.g.g[s.lastc[0]][s.lastc[1]] = 0
+
     for i in range(s.g.y):
       if(s.g.g[i][s.sc] != 0 or i == s.g.y - 1):
         print("s.g.g[", i, "][", s.sc, "]; s.g.y = ", s.g.y)
@@ -147,9 +151,6 @@ class game:
         elif(se == false):
           s.g.g[i][s.sc] = s.p + 2
           s.lastc = [i, s.sc]
-    print("s.lastc = [", s.lastc[0], ", ", s.lastc[1], "]")
-    if(s.lastc[0] != -1):
-      s.g.g[s.lastc[0]][s.lastc[1]] = 0
     return
 
 
