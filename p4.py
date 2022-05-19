@@ -136,7 +136,7 @@ g.dgm()
 t = monotonic()
 
 while(g.w == 0):
-  if((t + 500) < monotonic):
+  if((t + 500) < monotonic()):
     if(keydown(KEY_RIGHT) and lpk != KEY_RIGHT):
       t = monotonic()
       g.onr()
