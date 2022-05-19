@@ -137,17 +137,16 @@ class game:
     return
 
   def ons(s, se):
-    print("-------------------\n\n")
+    #print("-------------------\n\n")
     for i in range(s.g.y):
-      print("s.g.g[", i, "][", s.sc, "]; s.g.y = ", s.g.y)
       if(s.g.g[i][s.sc] != 0 or i == s.g.y - 1):
-        
+        print("s.g.g[", i, "][", s.sc, "]; s.g.y = ", s.g.y)
         if(se == true):
           s.g.g[i-1][s.sc] = s.p
-          s.lastc = [i-1, s.sc]
+          s.lastc = [-1, -1]
         elif(se == false):
           s.g.g[i][s.sc] = s.p + 2
-          s.lastc = [-1, -1]
+          s.lastc = [i-1, s.sc]
     if(s.lastc[0] != -1):
       s.g.g[s.lastc[0]][s.lastc[1]] = 0
     return
@@ -167,4 +166,4 @@ while(g.w == 0):
     if(keydown(KEY_LEFT)):
       t = monotonic()
       g.onl()
-    print(g.sc)
+    #print(g.sc)
