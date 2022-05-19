@@ -67,6 +67,7 @@ class game:
   lsco = 0
   sca = 0
   w = 0
+  cr = s.g.x * s.g.y
 
   def __init__(s, g):
     s.g = g
@@ -174,6 +175,9 @@ class game:
       s.g.g[s.sca][s.sco] = s.p + 2
     if(se == true):
       s.g.g[s.sca][s.sco] = s.p
+      s.cr = s.cr - 1
+      if(s.cr == 0):
+        return
       if(s.sca != 0):
         s.sca = s.sca -1
       else:
@@ -185,13 +189,22 @@ class game:
 
   def onp(s):
     s.ons(true)
-    if(s.p == 2):
+    if(s.cr == 0):
+      s.p = 0
+      return
+    elif(s.p == 2):
       s.p = 1
     else:
       s.p = 2
     s.ons(false)
     s.dgm()
     return
+
+  def tick(s):
+    if(g.p == 0):
+      fill_rect(0, 0, s.gox, 330, (255,255,255))
+      draw_string(0, 0, "partie terminée.")
+      g.w = 1
 
 
 g=game(grid(7,6))
@@ -200,6 +213,7 @@ g.ons(false)
 g.dgm()
 
 t = monotonic()
+gt = monotonic()
 
 while(g.w == 0):
   if((t + 0.25) < monotonic()):
@@ -212,5 +226,8 @@ while(g.w == 0):
     if(keydown(KEY_DOWN) or keydown(KEY_OK) or keydown(KEY_EXE)):
       t = monotonic()
       g.onp()
+  if((gt + 0.1) < monotonic()):
 
+    gt = monotonic()
+    
     #print(g.sc)
