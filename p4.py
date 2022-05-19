@@ -132,7 +132,7 @@ g=game(grid(7,6))
 g.g.dgd()
 g.dgm()
 
-lpk
+lpk = 0
 
 while(g.w == 0):
   if(keydown(KEY_RIGHT) and lpk != KEY_RIGHT):
