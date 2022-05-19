@@ -79,19 +79,19 @@ class game:
         for j in i:
           #print(x," ",y)
           if(j==1):
-            fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c1)
-            #fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c1)
+            #fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c1)
+            fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c1)
           elif(j==2):
-            #fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
-            fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c2)
+            fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
+            #fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c2)
           elif(j == 3):
-            #draw_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c1)
-            fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c1)
-            fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
+            draw_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c1)
+            #fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c1)
+            #fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
           elif(j == 4):
-            #draw_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
-            fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c2)
-            fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
+            draw_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
+            #fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c2)
+            #fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
           elif(j == 0):
             fill_rect(x+1, y+1, s.g.cw-1, s.g.ch-1, (255,255,255))
 
@@ -114,12 +114,12 @@ class game:
     for i in range(s.g.x):
       x = i * s.g.cw
       if(i == s.sco):
-        #fill_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
-        fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
+        fill_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
+        #fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
       else:
-        #draw_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
-        fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
-        fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
+        draw_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
+        #fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
+        #fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
     return
 
   def onr(s):
