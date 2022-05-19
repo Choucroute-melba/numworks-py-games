@@ -128,7 +128,7 @@ class game:
     s.sco = s.sco + 1
     if(s.sco >= s.g.x):
       s.sco = 0
-    while(s.g.g[0][s.sco] == 2 || s.g.g[0][s.sco] == 3):
+    while(s.g.g[0][s.sco] == 2 or s.g.g[0][s.sco] == 3):
       s.sco = s.sco + 1
       if(s.sco >= s.g.x):
         s.sco = 0
@@ -141,7 +141,7 @@ class game:
     s.sco = s.sco - 1
     if(s.sco < 0):
       s.sco = s.g.x - 1
-    while(s.g.g[0][s.sco] == 2 || s.g.g[0][s.sco] == 3):
+    while(s.g.g[0][s.sco] == 2 or s.g.g[0][s.sco] == 3):
       s.sco = s.sco - 1
       if(s.sco < 0):
         s.sco = s.g.x - 1
