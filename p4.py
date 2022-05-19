@@ -3,6 +3,8 @@ from kandinsky import *
 from ion import *
 from time import *
 
+false = 0
+true = 1
 
 class grid:
   c=[0,0,0]
