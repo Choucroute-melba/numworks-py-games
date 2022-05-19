@@ -149,7 +149,7 @@ class game:
       if(s.g.g[i][s.sc] == 1 or s.g.g[i][s.sc] == 2):
         print(s.g.g[i][s.sc], " == 1 or ", s.g.g[i][s.sc], " == 2")
         ctm = [i, s.sc]
-      if(i == s.g.y - 1):
+      elif(i == s.g.y - 1):
         print(i, " == ", s.g.y - 1)
         ctm = [i, s.sc]
 
@@ -157,7 +157,7 @@ class game:
         #print("s.g.g[", ctm[0], "][", ctm[1], "]; s.g.y = ", s.g.y)
         if(se == true):
           s.g.g[ctm[0]][ctm[1]] = s.p
-          print("selection : s.g.g[", ctm[0], "] = ", s.g.g[ctm[0]][ctm[1]])
+          print("selection : s.g.g[", ctm[0], "] = ", s.g.g[ctm[0]])
           s.lastc = [-1, -1]
         elif(se == false):
           s.g.g[ctm[0]][ctm[1]] = s.p + 2
