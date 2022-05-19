@@ -146,7 +146,7 @@ class game:
 
     for i in range(s.g.y):
       if(s.g.g[i][s.sc] == 1 or s.g.g[i][s.sc] == 2):
-        ctm = [i-1, s.sc]
+        ctm = [i, s.sc]
       if(i == s.g.y - 1):
         ctm = [i, s.sc]
 
