@@ -142,15 +142,22 @@ class game:
     if(s.lastc[0] != -1):
       s.g.g[s.lastc[0]][s.lastc[1]] = 0
 
+    ctm = [-1, -1]
+
     for i in range(s.g.y):
-      if(s.g.g[i][s.sc] == 1 or s.g.g[i][s.sc] == 2 or i == s.g.y - 1):
-        print("s.g.g[", i, "][", s.sc, "]; s.g.y = ", s.g.y)
+      if(s.g.g[i][s.sc] == 1 or s.g.g[i][s.sc] == 2):
+        ctm = [i-1, s.sc]
+      if(i == s.g.y - 1):
+        ctm = [i, s.sc]
+
+      if(ctm[0] != -1):
+        print("s.g.g[", ctm[0], "][", ctm[1], "]; s.g.y = ", s.g.y)
         if(se == true):
-          s.g.g[i-1][s.sc] = s.p
+          s.g.g[ctm[0]][ctm[1]] = s.p
           s.lastc = [-1, -1]
         elif(se == false):
-          s.g.g[i-1][s.sc] = s.p + 2
-          s.lastc = [i-1, s.sc]
+          s.g.g[ctm[0]][ctm[1]] = s.p + 2
+          s.lastc = ctm
     return
 
   def onp(s):
