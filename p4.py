@@ -157,6 +157,7 @@ class game:
         #print("s.g.g[", ctm[0], "][", ctm[1], "]; s.g.y = ", s.g.y)
         if(se == true):
           s.g.g[ctm[0]][ctm[1]] = s.p
+          print("selection : s.g.g[", ctm[0], "] = ", s.g.g[ctm[0]][ctm[1]])
           s.lastc = [-1, -1]
         elif(se == false):
           s.g.g[ctm[0]][ctm[1]] = s.p + 2
