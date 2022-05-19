@@ -141,12 +141,12 @@ class game:
       if(s.g.g[s.sc][i] != 0):
         if(se == true):
           s.g.g[s.sc][i-1] = p
-          lastc = [s.sc, i-1]
+          s.lastc = [s.sc, i-1]
         elif(se == false):
           s.g.g[s.sc][i-1] = p + 2
-          lastc = [-1, -1]
-    if(lastc[0] != -1):
-      s.g.g[lastc[0]][lastc[1]] = 0
+          s.lastc = [-1, -1]
+    if(s.lastc[0] != -1):
+      s.g.g[s.lastc[0]][s.lastc[1]] = 0
     return
 
 
