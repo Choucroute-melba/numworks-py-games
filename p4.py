@@ -69,11 +69,11 @@ class game:
         for j in i:
           #print(x," ",y)
           if(j==1):
-            fill_rect(x, y, s.g.cw, s.g.ch, s.g.c1)
+            fill_rect(x+1, y+1, s.g.cw-1, s.g.ch-1, s.g.c1)
             #fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c1)
           elif(j==2):
             #fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
-            fill_rect(x, y, s.g.cw, s.g.ch, s.g.c2)
+            fill_rect(x+1, y+1, s.g.cw-1, s.g.ch-1, s.g.c2)
           x = x + s.g.cw
         x=s.g.gox
         y = y + s.g.ch
