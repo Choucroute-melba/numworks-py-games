@@ -79,6 +79,7 @@ class game:
         y = y + s.g.ch
     return
 
+<<<<<<< HEAD
 
 g=game(grid(7,6))
 g.g.dgd()
@@ -100,6 +101,27 @@ g.g.dgd()
           x = x + s.g.cw
         x=s.g.gox
         y = y + s.g.ch
+=======
+  def dgmi(s):
+    x = 0
+    y = 0
+    if(s.p == 1):
+      c = s.g.c1
+    elif(s.p == 2):
+      c = s.g.c2
+    else:
+      c = (0,255,0)
+
+    for i in range(s.g.x):
+      x = i * s.g.cw
+      if(i == s.sc):
+        #fill_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
+        fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
+      else:
+        #draw_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
+        fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
+        fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
+>>>>>>> gist
     return
 
 
