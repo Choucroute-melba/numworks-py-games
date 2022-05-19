@@ -123,7 +123,7 @@ class game:
 
   def onl(s):
     s.sc = s.sc - 1
-    if(s.sc == 0):
+    if(s.sc < 0):
       s.sc = s.g.x
     s.dgm()
     return
