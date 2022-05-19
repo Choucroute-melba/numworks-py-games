@@ -155,8 +155,7 @@ class game:
 
     for i in range(s.g.y):
       if(s.g.g[i][s.sco] == 1 or s.g.g[i][s.sco] == 2):
-        else:
-          s.sca = i-1
+        s.sca = i-1
         break
       if(i == s.g.y -1):
         s.sca = i
