@@ -63,7 +63,7 @@ class game:
   p = 2
   sc = 3
   w = 0
-  lastc = null
+  lastc = [-1, -1]
   def __init__(s, g):
     s.g = g
     return
@@ -90,7 +90,7 @@ class game:
             fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
           elif(j == 0):
             fill_rect(x+1, y+1, s.g.cw-1, s.g.ch-1, (255,255,255))
-            
+
           x = x + s.g.cw
         x=s.g.gox
         y = y + s.g.ch
@@ -140,8 +140,8 @@ class game:
           lastc = [s.sc, i-1]
         elif(se == false):
           s.g.g[s.sc][i-1] = p + 2
-          lastc = null
-    if(lastc != null):
+          lastc = [-1, -1]
+    if(lastc[0] != -1):
       s.g.g[lastc[0]][lastc[1]] = 0
     return
 
