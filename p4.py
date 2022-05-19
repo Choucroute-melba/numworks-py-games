@@ -122,6 +122,7 @@ class game:
     s.sc = s.sc + 1
     if(s.sc >= s.g.x):
       s.sc = 0
+    s.ons(false)
     s.dgm()
     return
 
@@ -129,10 +130,11 @@ class game:
     s.sc = s.sc - 1
     if(s.sc < 0):
       s.sc = s.g.x
+    s.ons(false)
     s.dgm()
     return
 
-  def onSelect(s, se):
+  def ons(s, se):
     for i in range(s.g.y):
       if(s.g.g[s.sc][i] != 0):
         if(se == true):
