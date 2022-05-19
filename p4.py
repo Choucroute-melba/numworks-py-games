@@ -170,6 +170,11 @@ class game:
       s.g.g[s.sca][s.sco] = s.p
       if(s.sca != 0):
         s.sca = s.sca -1
+      else:
+        if(s.lsco - s.sco < 0):
+          s.onr()
+        else:
+          s.onl()
     return
 
   def onp(s):
