@@ -77,10 +77,11 @@ class game:
           elif(j == 3):
             #draw_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c1)
             fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c1)
+            fill_rect(x+4, y+2, s.g.cw-4, s.g.ch-4, (255,255,255))
           elif(j == 4):
             #draw_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
             fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c2)
-
+            fill_rect(x+4, y+2, s.g.cw-4, s.g.ch-4, (255,255,255))
           x = x + s.g.cw
         x=s.g.gox
         y = y + s.g.ch
