@@ -172,6 +172,7 @@ class game:
 
 g=game(grid(7,6))
 g.g.dgd()
+g.ons(false)
 g.dgm()
 
 t = monotonic()
