@@ -1,4 +1,4 @@
-﻿from math import *
+from math import *
 from kandinsky import *
 from ion import *
 from time import *
@@ -73,6 +73,15 @@ class game:
     return
 
   def dgm(s):
+    x = s.g.gox
+    y = s.g.goy
+    for i in s.g.g:
+        for j in i:
+          #print(x," ",y)
+          if(j==1):
+            fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c1)
+            #fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c1)
+          elif(j==2):
             #fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
             fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c2)
           elif(j == 3):
@@ -89,25 +98,9 @@ class game:
           x = x + s.g.cw
         x=s.g.gox
         y = y + s.g.ch
+    s.dgmi()
     return
 
-      x = s.gox
-      y = s.goy
-      for i in s.g:
-=======
-    x = s.g.gox
-    y = s.g.goy
-    for i in s.g.g:
-        for j in i:
-          #print(x," ",y)
-          if(j==1):
-            fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c1)
-          elif(j==2):
-            fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
-          x = x + s.g.cw
-        x=s.g.gox
-        y = y + s.g.ch
-=======
   def dgmi(s):
     x = 0
     y = 0
@@ -127,7 +120,6 @@ class game:
         #draw_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
         fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
         fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
->>>>>>> gist
     return
 
   def onr(s):
@@ -188,10 +180,7 @@ class game:
 
 g=game(grid(7,6))
 g.g.dgd()
-<<<<<<< HEAD
-=======
 g.ons(false)
->>>>>>> gist
 g.dgm()
 
 t = monotonic()
