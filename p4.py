@@ -147,7 +147,11 @@ class game:
     for i in range(s.g.y):
       if(s.g.g[i][s.sco] == 1 or s.g.g[i][s.sco] == 2):
         if(i == 0):
-          s.sca = 0
+          if(s.lsco - s.sco < 0):
+            s.onr()
+          else:
+            s.onl()
+          return
         else:
           s.sca = i-1
         break
