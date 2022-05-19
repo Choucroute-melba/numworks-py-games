@@ -148,9 +148,9 @@ class game:
         break
 
     if(se == false):
-      s.g.g[s.sca][s.sco] = p + 2
+      s.g.g[s.sca][s.sco] = s.p + 2
     if(se == true):
-      s.g.g[s.sca][s.sco] = p
+      s.g.g[s.sca][s.sco] = s.p
       if(s.sca != 0):
         s.sca = s.sca -1
     return
