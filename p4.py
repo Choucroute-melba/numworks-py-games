@@ -100,7 +100,7 @@ class game:
     else:
       c = (0,255,0)
 
-    for(i in range(g.x)):
+    for i in range(g.x):
       x = i * s.g.cw
       if(i == s.sc):
         fill_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
