@@ -124,7 +124,7 @@ class game:
         fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
 
     
-    print(s.cr)
+    draw_string(str(s.cr), 0, 0)
     return
 
   def onr(s):
@@ -206,7 +206,7 @@ class game:
   def tick(s):
     if(g.p <= 0):
       fill_rect(0, 0, s.g.gox, 330, (255,255,255))
-      draw_string(0, 0, "partie terminée.")
+      draw_string("partie terminée.", 0, 0)
       g.w = 1
 
 
