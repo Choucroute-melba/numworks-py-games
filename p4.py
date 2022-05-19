@@ -205,7 +205,7 @@ class game:
 
   def tick(s):
     if(g.p <= 0):
-      fill_rect(0, 0, s.gox, 330, (255,255,255))
+      fill_rect(0, 0, s.g.gox, 330, (255,255,255))
       draw_string(0, 0, "partie terminée.")
       g.w = 1
 
