@@ -146,8 +146,10 @@ class game:
 
     for i in range(s.g.y):
       if(s.g.g[i][s.sc] == 1 or s.g.g[i][s.sc] == 2):
+        print(s.g.g[i][s.sc], " == 1 or ", s.g.g[i][s.sc], " == 2")
         ctm = [i, s.sc]
       if(i == s.g.y - 1):
+        print(i, " == ", s.g.y - 1)
         ctm = [i, s.sc]
 
       if(ctm[0] != -1):
