@@ -167,3 +167,4 @@ while(g.w == 0):
     if(keydown(KEY_LEFT)):
       t = monotonic()
       g.onl()
+    print(g.sc)
