@@ -58,6 +58,8 @@ class grid:
 
 
 class game:
+  p = 1
+  sc = 0
   def __init__(s, g):
     s.g = g
     return
@@ -85,6 +87,25 @@ class game:
           x = x + s.g.cw
         x=s.g.gox
         y = y + s.g.ch
+    s.dgmi()
+    return
+
+  def dgmi(s):
+    x = 0
+    y = 0
+    if(p == 1): 
+      c = s.g.c1
+    elif(p == 2):
+      c = s.g.c2
+    else:
+      c = (0,255,0)
+
+    for(i in range(g.x)):
+      x = i * s.g.cw
+      if(i == s.sc):
+        fill_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
+      else:
+        draw_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
     return
 
 
