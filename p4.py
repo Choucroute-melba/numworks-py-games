@@ -170,6 +170,7 @@ class game:
       s.p = 1
     else:
       s.p = 2
+    s.ons(false)
     s.dgm()
     return
 
