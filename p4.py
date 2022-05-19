@@ -1,6 +1,10 @@
 ﻿from math import *
 from kandinsky import *
+from ion import *
+from time import *
 
+false = 0
+true = 1
 
 class grid:
   c=[0,0,0]
@@ -27,7 +31,7 @@ class grid:
 
     for i in range(y):
       for j in range(x):
-        s.g[i].append(2)
+        s.g[i].append(0)
       s.g.append([])
       #print(str(s.g))
     print(x," ",y," ",s.cw," ",s.ch)
@@ -58,32 +62,35 @@ class grid:
 
 
 class game:
+  p = 2
+  sco = 0
+  lsco = 0
+  sca = 0
+  w = 0
+  lastc = [-1, -1]
   def __init__(s, g):
     s.g = g
     return
 
   def dgm(s):
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x = s.g.gox
-    y = s.g.goy
-    for i in s.g.g:
-        for j in i:
-          #print(x," ",y)
-          if(j==1):
-            fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c1)
-          elif(j==2):
-            fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
+            #fill_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
+            fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c2)
+          elif(j == 3):
+            #draw_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c1)
+            fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c1)
+            fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
+          elif(j == 4):
+            #draw_circle(s.g.jx(x),s.g.jy(y),int(s.g.ch/2),s.g.c2)
+            fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, s.g.c2)
+            fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
+          elif(j == 0):
+            fill_rect(x+1, y+1, s.g.cw-1, s.g.ch-1, (255,255,255))
+
           x = x + s.g.cw
         x=s.g.gox
         y = y + s.g.ch
     return
 
-<<<<<<< HEAD
-
-g=game(grid(7,6))
-g.g.dgd()
-=======
       x = s.gox
       y = s.goy
       for i in s.g:
@@ -91,7 +98,6 @@ g.g.dgd()
     x = s.g.gox
     y = s.g.goy
     for i in s.g.g:
->>>>>>> 930a4e0 (create game class)
         for j in i:
           #print(x," ",y)
           if(j==1):
@@ -114,7 +120,7 @@ g.g.dgd()
 
     for i in range(s.g.x):
       x = i * s.g.cw
-      if(i == s.sc):
+      if(i == s.sco):
         #fill_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
         fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
       else:
@@ -124,17 +130,82 @@ g.g.dgd()
 >>>>>>> gist
     return
 
+  def onr(s):
+    s.lsco = s.sco
+    s.sco = s.sco + 1
+    if(s.sco >= s.g.x):
+      s.sco = 0
+    s.ons(false)
+    s.dgm()
+    return
 
-<<<<<<< HEAD
-class game:
-  def __init__(s, goy):
-    return    
-    
-g=grid(7,6)
-g.dgd()
->>>>>>> 2d53fce (next)
-=======
+  def onl(s):
+    s.lsco = s.sco
+    s.sco = s.sco - 1
+    if(s.sco < 0):
+      s.sco = s.g.x - 1
+    s.ons(false)
+    s.dgm()
+    return
+
+  def ons(s, se):
+    if(s.g.g[s.sca][s.lsco] == 3 or s.g.g[s.sca][s.lsco] == 4):
+      s.g.g[s.sca][s.lsco] = 0
+
+    for i in range(s.g.y):
+      if(s.g.g[i][s.sco] == 1 or s.g.g[i][s.sco] == 2):
+        if(i == 0):
+          if(s.lsco - s.sco < 0):
+            s.onr()
+          else:
+            s.onl()
+          return
+        else:
+          s.sca = i-1
+        break
+      if(i == s.g.y -1):
+        s.sca = i
+        break
+
+    if(se == false):
+      s.g.g[s.sca][s.sco] = s.p + 2
+    if(se == true):
+      s.g.g[s.sca][s.sco] = s.p
+      if(s.sca != 0):
+        s.sca = s.sca -1
+    return
+
+  def onp(s):
+    s.ons(true)
+    if(s.p == 2):
+      s.p = 1
+    else:
+      s.p = 2
+    s.ons(false)
+    s.dgm()
+    return
+
+
 g=game(grid(7,6))
 g.g.dgd()
->>>>>>> 930a4e0 (create game class)
+<<<<<<< HEAD
+=======
+g.ons(false)
+>>>>>>> gist
 g.dgm()
+
+t = monotonic()
+
+while(g.w == 0):
+  if((t + 0.25) < monotonic()):
+    if(keydown(KEY_RIGHT)):
+      t = monotonic()
+      g.onr()
+    if(keydown(KEY_LEFT)):
+      t = monotonic()
+      g.onl()
+    if(keydown(KEY_DOWN) or keydown(KEY_OK) or keydown(KEY_EXE)):
+      t = monotonic()
+      g.onp()
+
+    #print(g.sc)
