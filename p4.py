@@ -67,7 +67,7 @@ class game:
   lsco = 0
   sca = 0
   w = 0
-  lastc = [-1, -1]
+
   def __init__(s, g):
     s.g = g
     return
