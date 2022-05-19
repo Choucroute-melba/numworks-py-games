@@ -139,6 +139,7 @@ class game:
 
   def ons(s, se):
     s.g.g[s.sca][s.sco] = 0
+    s.dgm()
     for i in range(s.g.y):
       if(s.g.g[i][s.sco] == 1 or s.g.g[i][s.sco] == 2):
         s.sca = i-1
