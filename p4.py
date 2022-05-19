@@ -27,7 +27,7 @@ class grid:
 
     for i in range(y):
       for j in range(x):
-        s.g[i].append(2)
+        s.g[i].append(3)
       s.g.append([])
       #print(str(s.g))
     print(x," ",y," ",s.cw," ",s.ch)
