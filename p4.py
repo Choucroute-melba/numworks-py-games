@@ -67,9 +67,10 @@ class game:
   lsco = 0
   sca = 0
   w = 0
-  lastc = [-1, -1]
+
   def __init__(s, g):
     s.g = g
+    s.cr = s.g.x * s.g.y
     return
 
   def dgm(s):
@@ -118,41 +119,60 @@ class game:
         fill_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
         #fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
       else:
+<<<<<<< HEAD
         draw_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
         #fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
         #fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
+=======
+        #draw_circle(s.g.jx(x), s.g.jy(y), int(s.g.ch/2), c)
+        fill_rect(x+2, y+2, s.g.cw-2, s.g.ch-2, c)
+        fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
+
+    
+    #draw_string(str(s.cr), 0, s.g.ch)
+>>>>>>> master
     return
 
   def onr(s):
     s.lsco = s.sco
-    s.sco = s.sco + 1
-    if(s.sco >= s.g.x):
-      s.sco = 0
+    s.mv("right")
     s.ons(false)
     s.dgm()
     return
 
   def onl(s):
     s.lsco = s.sco
-    s.sco = s.sco - 1
-    if(s.sco < 0):
-      s.sco = s.g.x - 1
+    s.mv("left")
     s.ons(false)
     s.dgm()
     return
 
+  def mv(s, d):
+    if(d == "right"):
+      for i in range(s.g.x):
+        s.sco = s.sco + 1
+        if(s.sco >= s.g.x):
+          s.sco = 0
+        if(s.g.g[0][s.sco] != 1 and s.g.g[0][s.sco] != 2):
+          return
+    elif(d == "left"):
+      for i in range(s.g.x):
+        s.sco = s.sco - 1
+        if(s.sco < 0):
+          s.sco = s.g.x -1
+        if(s.g.g[0][s.sco] != 1 and s.g.g[0][s.sco] != 2):
+          return
+
+
+
   def ons(s, se):
-    if(s.g.g[s.sca][s.lsco] == 3 or s.g.g[s.sca][s.lsco] == 4):
+    if(s.g.g[s.sca][s.lsco] != 1 and s.g.g[s.sca][s.lsco] != 2):
       s.g.g[s.sca][s.lsco] = 0
 
     for i in range(s.g.y):
       if(s.g.g[i][s.sco] == 1 or s.g.g[i][s.sco] == 2):
         if(i == 0):
-          if(s.lsco - s.sco < 0):
-            s.onr()
-          else:
-            s.onl()
-          return
+          s.sca = 0
         else:
           s.sca = i-1
         break
@@ -164,19 +184,37 @@ class game:
       s.g.g[s.sca][s.sco] = s.p + 2
     if(se == true):
       s.g.g[s.sca][s.sco] = s.p
+      s.cr = s.cr - 1
+      if(s.cr <= 0):
+        return
       if(s.sca != 0):
         s.sca = s.sca -1
+      else:
+        if(s.lsco - s.sco < 0):
+          s.onr()
+        else:
+          s.onl()
     return
 
   def onp(s):
     s.ons(true)
-    if(s.p == 2):
+    if(s.cr == 0):
+      s.p = 0
+      s.dgm()
+      return
+    elif(s.p == 2):
       s.p = 1
     else:
       s.p = 2
     s.ons(false)
     s.dgm()
     return
+
+  def tick(s):
+    if(g.p <= 0):
+      fill_rect(0, 0, s.g.gox, 330, (255,255,255))
+      draw_string("partie terminee.", 0, 0)
+      g.w = 1
 
 
 g=game(grid(7,6))
@@ -185,6 +223,7 @@ g.ons(false)
 g.dgm()
 
 t = monotonic()
+gt = monotonic()
 
 while(g.w == 0):
   if((t + 0.25) < monotonic()):
@@ -197,5 +236,8 @@ while(g.w == 0):
     if(keydown(KEY_DOWN) or keydown(KEY_OK) or keydown(KEY_EXE)):
       t = monotonic()
       g.onp()
-
+  if((gt + 0.1) < monotonic()):
+    g.tick()
+    gt = monotonic()
+    
     #print(g.sc)
