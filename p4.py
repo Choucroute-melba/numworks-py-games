@@ -1,5 +1,6 @@
 from math import *
 from kandinsky import *
+from ion import *
 
 
 class grid:
@@ -60,6 +61,7 @@ class grid:
 class game:
   p = 2
   sc = 3
+  w = 0
   def __init__(s, g):
     s.g = g
     return
@@ -111,7 +113,24 @@ class game:
         fill_rect(x+4, y+4, s.g.cw-8, s.g.ch-8, (255,255,255))
     return
 
+  def onr(s):
+    s.sc = s.sc + 1
+    if(sc > s.g.x):
+      s.sc = 0
+    s.dgm()
+    return
+
+  def onl(s):
+    s.sc = s.sc - 1
+    if(sc < 0):
+      s.sc = s.g.x
+    s.dgm()
+    return
+
 
 g=game(grid(7,6))
 g.g.dgd()
 g.dgm()
+
+while(g.w == 0):
+  if(keydown(KEY_RIGHT)):
